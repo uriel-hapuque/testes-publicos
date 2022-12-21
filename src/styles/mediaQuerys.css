@@ -1,0 +1,113 @@
+@media(max-width: 375px) {
+  .section-modalities {
+    justify-content: space-between;
+  }
+}
+
+@media(min-width: 380px) {
+  .background-img {
+    background-image: url(../assets/img/webwomen-desktop.svg);
+    width: 100%;
+  }
+
+  .site-description {
+    height: 160px;
+  }
+
+  .header-span-bold {
+    height: 64px;
+  }
+}
+
+@media(min-width: 768px) {
+  .site-apresentation {
+    padding-top: 160px;
+    padding-bottom: 40px;
+  }
+
+  .section-modality-btn {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+
+@media(min-width: 1024px) {
+  .background-img {
+    background-image: url(../assets/img/webwomen-desktop.svg);
+    width: 100%;
+  }
+
+  .site-apresentation {
+    width: 893px;
+  }
+
+  .container {
+    margin: 0 100px;
+  }
+
+  .site-slogan {
+    font-size: var(--title-1);
+    height: 96px;
+  }
+
+  .site-description {
+    font-size: var(--text-1);
+  }
+
+  .header-span-bold {
+    font-size: var(--text-1);
+  }
+}
+
+@media(min-width: 1330px) {
+  .job-section {
+    width: 818px;
+  }
+
+  .job-description {
+    width: 740px;
+    height: 64px;
+  }
+
+  .section-modality-btn {
+    gap: 220px;
+    height: 38px;
+    flex-direction: row;
+  }
+
+  .teste {
+    gap: 397px;
+  }
+
+  .apply-job {
+    height: 38px;
+    padding: 12px 28px;
+  }
+
+  .selected-job {
+    width: 818px;
+  }
+
+  .selected-title {
+    width: 818px;
+  }
+}
+
+@media(min-width: 1600px) {
+  .main-container {
+    display: flex;
+    gap: 78px;
+  }
+
+  .selected-job {
+    width: 474px;
+    position: sticky;
+    top: 30px;
+  }
+
+  .selected-title {
+    width: 474px;
+  }
+
+
+}

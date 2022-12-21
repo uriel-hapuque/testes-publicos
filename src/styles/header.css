@@ -1,0 +1,82 @@
+.background-img {
+  background-image: url(../assets/img/webwomen-mobile.svg);
+  background-attachment: fixed;
+  width: 375px;
+  height: 789px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.opacity {
+  width: 100%;
+  height: 789px;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  left: 0px;
+}
+
+.site-apresentation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 100px 0px;
+  gap: 60px;
+  margin-bottom: 13px;
+  position: relative;
+}
+
+.site-logo {
+  width: 193.31px;
+  height: 23.97px;
+}
+
+.site-info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.site-slogan {
+  height: 96px;
+  font-style: var(--font-style-default);
+  font-weight: var(--font-weigth-1);
+  font-size: var(--title-3);
+  line-height: 48px;
+  color: var(--color-grey-3);
+}
+
+.site-description {
+  font-style: var(--font-style-default);
+  font-weight: var(--font-weigth-3);
+  font-size: var(--text-2);
+  line-height: 32px;
+  color: var(--color-grey-5);
+}
+
+.header-span-bold {
+  font-style: var(--font-style-default);
+  font-weight: var(--font-weigth-3);
+  font-size: var(--text-2);
+  line-height: 32px;
+  color: var(--color-grey-5);
+}
+
+.header-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0px;
+  gap: 10px;
+  width: 296px;
+  height: 48px;
+  background: var(--color-brand-1);
+  border: 2px solid var(--color-brand-1);
+  border-radius: var(--radius-default);
+  font-style: var(--font-style-default);
+  font-weight: var(--font-weigth-2);
+  font-size: var(--text-1);
+  line-height: 24px;
+  color: var(--color-grey-6);
+}
