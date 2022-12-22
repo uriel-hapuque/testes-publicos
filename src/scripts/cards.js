@@ -9,22 +9,10 @@ function renderAppliedJob(appliedJobsArr) {
         appliedJobsArr.forEach((vacancie) => {
             const vacancies = createAppliedVacanciesCards(vacancie)
             cardsSelectedJobs.appendChild(vacancies)
-            let trashButtons = document.querySelectorAll(".remove-trash-button")
-
-            trashButtons.forEach(button => {
-                button.addEventListener("click", (event) => {
-                    const applyJobBtn = document.querySelector(".remove-job")
-                    applyJobBtn.innerText = "Candidatar"
-                    const appliedJob = appliedJobsArr.find(vacancie => {
-                        return vacancie.id === Number(event.target.dataset.id)
-                    })
-                    const jobIndex = appliedJobsArr.indexOf(appliedJob)
-                    appliedJobsArr.splice(jobIndex, 1)
-                    renderAppliedJob(appliedVacancies)
-                })
-            })
         })
+        removeByTrash()
     }
+
 }
 
 function createAppliedVacanciesCards(dados) {
@@ -46,7 +34,7 @@ function createAppliedVacanciesCards(dados) {
 
     selectedJobTitle.innerText = dados.title
     removeTrashBtn.src = "./src/assets/img/trash.svg"
-
+    removeTrashBtn.id = dados.id
     selectedJobCompany.innerText = dados.enterprise
     selectedJobLocal.innerText = dados.location
 
@@ -57,7 +45,8 @@ function createAppliedVacanciesCards(dados) {
     return selectedJobCard
 }
 
-function addToApplied() {
+
+function addAndRemoveToApplied() {
     const applyJob = document.querySelectorAll(".apply-job");
     applyJob.forEach(button => button.addEventListener("click", (event) => {
         let button = event.target
@@ -70,12 +59,11 @@ function addToApplied() {
             })
             const applyVacancie = {
                 ...foundVacancie,
-                appliedId: appliedVacancies.length + 1
+                appliedId: appliedVacancies.length
             }
             appliedVacancies.push(applyVacancie)
             renderAppliedJob(appliedVacancies)
-        }
-        else {
+        } else {
             button.classList.toggle("remove-job")
             button.classList.add("apply-job")
             button.innerText = "Candidatar"
@@ -105,7 +93,30 @@ function createEmptyMessage() {
 
     return sectionNotVacancies
 }
-addToApplied()
+
+function removeByTrash() {
+    const trashs = document.querySelectorAll(".remove-trash-button")
+    const buttons = document.querySelectorAll(".remove-job")
+    buttons.forEach(button => {
+        trashs.forEach(trash => trash.addEventListener("click", (event) => {
+            if (button.dataset.id === event.target.id) {
+                button.innerText = "Candidatar"
+                const appliedJob = appliedVacancies.find(vacancie => {
+                    return vacancie.id === Number(event.target.id)
+                })
+                const jobIndex = appliedVacancies.indexOf(appliedJob)
+                appliedVacancies.splice(jobIndex, 1)
+
+                renderAppliedJob(appliedVacancies)
+
+            }
+        }))
+    })
+
+}
+
+addAndRemoveToApplied()
+
 
 
 
