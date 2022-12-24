@@ -11,8 +11,8 @@ function renderAppliedJob(appliedJobsArr) {
             cardsSelectedJobs.appendChild(vacancies)
         })
         removeByTrash()
+        hoverTrash()
     }
-
 }
 
 function createAppliedVacanciesCards(dados) {
@@ -59,7 +59,7 @@ function addAndRemoveToApplied() {
             })
             const applyVacancie = {
                 ...foundVacancie,
-                appliedId: appliedVacancies.length
+                appliedId: appliedVacancies.length + 1
             }
             appliedVacancies.push(applyVacancie)
             renderAppliedJob(appliedVacancies)
@@ -106,20 +106,20 @@ function removeByTrash() {
                 })
                 const jobIndex = appliedVacancies.indexOf(appliedJob)
                 appliedVacancies.splice(jobIndex, 1)
-
                 renderAppliedJob(appliedVacancies)
-
             }
         }))
     })
+}
 
+function hoverTrash() {
+    const trashBtn = document.querySelectorAll(".remove-trash-button")
+    trashBtn.forEach(button => button.addEventListener("mouseenter", (event) => {
+        button.src = "./src/assets/img/trash-selected.svg"
+    }))
+    trashBtn.forEach(button => button.addEventListener("mouseout", (event) => {
+        button.src = "./src/assets/img/trash.svg"
+    }))
 }
 
 addAndRemoveToApplied()
-
-
-
-
-
-
-
